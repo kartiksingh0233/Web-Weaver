@@ -1,0 +1,150 @@
+Create a professional, modern and responsive website for a digital marketing
+and IT services company based in Lalitpur, Uttar Pradesh, India.
+
+Business Name:
+RKB Digital Services
+
+Tagline:
+School Admission & Digital Promotion Experts
+
+Service Area:
+Lalitpur – All Private Schools
+
+Primary Focus:
+Digital marketing and admission promotion services for private schools.
+
+Website Pages Required:
+1. Home
+2. About Us
+3. Our Services
+4. School Marketing Packages
+5. Why Choose Us
+6. Contact Us
+
+HOME PAGE CONTENT:
+Show a strong headline:
+"Grow Your School Admissions with Smart Digital Marketing"
+
+Subheading:
+"We help private schools in Lalitpur increase visibility, enquiries and admissions
+through Facebook, Instagram and WhatsApp marketing."
+
+Add call-to-action buttons:
+"Get Free Consultation"
+"Call / WhatsApp Now"
+
+ABOUT US PAGE:
+Write content explaining that RKB Digital Services specializes in
+school-focused digital marketing, local parent targeting,
+professional creatives, transparent pricing and personal support.
+
+OUR SERVICES PAGE:
+List the following services clearly in sections:
+
+Web & App Services:
+Website Design
+Website Development
+School Website Development
+Website Maintenance
+WordPress Development
+
+Mobile & Software:
+School Mobile App
+ERP Software Development
+CRM Software Development
+
+Digital Marketing:
+Social Media Marketing
+Search Engine Optimization (SEO)
+Facebook & Instagram Ads
+Lead Generation Services
+Online Reputation Management
+
+Design & Branding:
+Graphic Design Services
+Logo Design
+Social Media Creatives
+Poster & Flyer Design
+Canva Design Services
+
+Video & Media:
+Reels & Shorts Editing
+Promotional Video Creation
+YouTube Video Editing
+
+AI & Automation:
+AI Chatbot Development
+WhatsApp Chatbot Integration
+Business Automation Services
+
+SCHOOL MARKETING PACKAGES PAGE:
+Show 3 pricing cards:
+
+Package 1 – Basic Plan
+Price: ₹3,000 / Month
+Includes:
+12 Social Media Posts
+Festival & Event Posters
+Facebook & Instagram Page Handling
+WhatsApp Share Posters
+Best for Play Schools and Small Private Schools
+
+Package 2 – Standard Plan (Most Recommended)
+Price: ₹5,000 / Month
+Includes:
+16–20 Social Media Posts
+4 Short Reels per Month
+Admission Open Posters
+Festival, Result & Achievement Creatives
+Facebook & Instagram Page Handling
+WhatsApp Promotion Posters
+Basic Page Growth & Engagement
+Best for Growing Private Schools
+
+Package 3 – Premium Plan
+Price: ₹8,000 – ₹10,000 / Month
+Includes:
+Daily Social Media Posts
+6–8 Reels per Month
+Complete Admission Campaign Strategy
+Event Highlights & Branding Content
+Priority Support
+Full Social Media Management
+Best for Schools with High Admission Targets
+
+WHY CHOOSE US PAGE:
+Highlight points:
+School-focused marketing
+Local Lalitpur parent targeting
+Fixed monthly pricing
+100% transparency
+Professional posters, reels and captions
+Quick support and personal attention
+
+CONTACT PAGE:
+Show contact details clearly:
+
+Business Name:
+RKB Digital Services
+
+Phone / WhatsApp:
++91 9369088265
+
+Service Area:
+Lalitpur (All Private Schools)
+
+Add a simple contact form:
+Name
+School Name
+Mobile Number
+Message
+
+Design Requirements:
+Use a clean, professional education-friendly color scheme
+Make the website mobile-friendly
+Add smooth scrolling
+Use modern fonts
+Ensure clear call-to-action buttons
+Make the site SEO-friendly
+
+Make the website ready for public deployment.
