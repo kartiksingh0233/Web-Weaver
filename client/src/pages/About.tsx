@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, Users, Shield, Award, Heart, Lightbulb, Phone, User } from "lucide-react";
+import { Target, Users, Shield, Award, Heart, Lightbulb, Phone, Building2, GraduationCap, Hospital, Briefcase, Star, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import logoImage from "@assets/RKB_Logo_1769961850657.png";
@@ -7,13 +7,13 @@ import logoImage from "@assets/RKB_Logo_1769961850657.png";
 const values = [
   {
     icon: Target,
-    title: "School-Focused Marketing",
-    description: "We specialize exclusively in educational marketing, understanding the unique needs of schools and parents."
+    title: "All India Services",
+    description: "We serve businesses across all of India - schools, hospitals, companies, and corporates."
   },
   {
     icon: Users,
-    title: "Local Parent Targeting",
-    description: "We target parents in Lalitpur who are actively searching for quality education for their children."
+    title: "Result-Driven",
+    description: "Every campaign is designed with one goal: driving real business growth and results."
   },
   {
     icon: Shield,
@@ -23,25 +23,25 @@ const values = [
   {
     icon: Award,
     title: "Professional Creatives",
-    description: "High-quality posters, reels, and captions designed to make your school stand out."
+    description: "High-quality posters, reels, and content designed to make your business stand out."
   },
   {
     icon: Heart,
-    title: "Personal Support",
-    description: "Quick response times and dedicated attention to each school we partner with."
+    title: "Dedicated Support",
+    description: "Quick response times and personal attention to each client we partner with."
   },
   {
     icon: Lightbulb,
-    title: "Result-Driven",
-    description: "Every campaign is designed with one goal: increasing your school's admissions."
+    title: "Smart Strategies",
+    description: "Modern digital marketing strategies tailored to your specific industry and goals."
   }
 ];
 
-const teamMembers = [
-  { name: "Mr. Rohit", role: "CEO", phone: "+91 8081874894" },
-  { name: "Mr. Kaushlendra", role: "MD", phone: "+91 9369088265" },
-  { name: "Mr. Brajendra", role: "Director", phone: "+91 9696824627" },
-  { name: "Mr. Chandra Bhushan", role: "Chairperson", phone: "+91 6387122561" },
+const services = [
+  { icon: GraduationCap, label: "Schools & Colleges", desc: "Admission marketing & brand building" },
+  { icon: Hospital, label: "Hospitals & Clinics", desc: "Patient acquisition & reputation" },
+  { icon: Building2, label: "Companies & Startups", desc: "Lead generation & brand awareness" },
+  { icon: Briefcase, label: "Corporates & Societies", desc: "Digital presence & engagement" },
 ];
 
 export default function About() {
@@ -58,7 +58,7 @@ export default function About() {
           >
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">About Us</h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Your trusted partner for school digital marketing in Lalitpur
+              Your trusted All India digital marketing partner
             </p>
           </motion.div>
         </div>
@@ -76,10 +76,16 @@ export default function About() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-3xl"></div>
                 <div className="relative bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 border border-slate-100 shadow-xl">
-                  <img src={logoImage} alt="RKB Digital Services" className="w-48 h-48 mx-auto object-contain mb-6" />
+                  <motion.img 
+                    src={logoImage} 
+                    alt="RKB Digital Services" 
+                    className="w-48 h-48 mx-auto object-contain mb-6"
+                    whileHover={{ rotateY: 180, scale: 1.1 }}
+                    transition={{ duration: 0.8 }}
+                  />
                   <div className="text-center">
-                    <h2 className="text-2xl font-bold font-display text-primary">RKB Digital Services</h2>
-                    <p className="text-muted-foreground font-medium">School Admission & Digital Promotion Experts</p>
+                    <h2 className="text-2xl font-bold font-display bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">RKB Digital Services</h2>
+                    <p className="text-muted-foreground font-medium">All India Digital Marketing Experts</p>
                   </div>
                 </div>
               </div>
@@ -92,12 +98,12 @@ export default function About() {
               className="space-y-6"
             >
               <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider">Who We Are</span>
-              <h2 className="text-3xl md:text-4xl font-bold font-display">Dedicated to Growing School Admissions</h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-display">Dedicated to Growing Your Business</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                RKB Digital Services is a specialized digital marketing agency based in <strong className="text-foreground">Lalitpur, Uttar Pradesh</strong>. We focus exclusively on helping private schools increase their visibility and admissions through modern digital marketing strategies.
+                <strong className="text-foreground">RKB Digital Services</strong> is a leading digital marketing agency based in <strong className="text-foreground">Lalitpur, Uttar Pradesh</strong>. We serve businesses across <strong className="text-foreground">All India</strong> including schools, hospitals, companies, corporates, and more.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Our team understands the local market and parents' mindset. We create targeted campaigns on Facebook, Instagram, and WhatsApp that reach the right audience at the right time, driving inquiries and enrollments for your school.
+                Our team creates targeted campaigns on Facebook, Instagram, and WhatsApp that reach the right audience at the right time, driving inquiries and growth for your business.
               </p>
               <div className="pt-4">
                 <Link href="/contact">
@@ -111,7 +117,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* MD Section */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -120,33 +126,126 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Our Team</span>
-            <h2 className="text-3xl md:text-4xl font-bold font-display">Meet Our Leadership</h2>
+            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Our Leadership</span>
+            <h2 className="text-3xl md:text-4xl font-bold font-display">Meet Our Managing Director</h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="max-w-lg mx-auto"
+          >
+            <motion.a
+              href="tel:+919369088265"
+              whileHover={{ scale: 1.05, y: -10 }}
+              whileTap={{ scale: 0.98 }}
+              className="block bg-white rounded-3xl p-8 border-2 border-primary/30 shadow-2xl shadow-primary/10 text-center group relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              
+              <motion.div
+                animate={{ 
+                  boxShadow: ["0 0 0 0 rgba(59, 130, 246, 0)", "0 0 0 20px rgba(59, 130, 246, 0.1)", "0 0 0 0 rgba(59, 130, 246, 0)"]
+                }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                className="relative w-32 h-32 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <span className="text-5xl font-bold text-white">MK</span>
+              </motion.div>
+              
+              <h3 className="font-bold text-2xl text-slate-900 relative z-10">Mr. Kaushlendra</h3>
+              <p className="text-primary font-bold text-xl mt-2 relative z-10">Managing Director</p>
+              
+              <motion.div 
+                className="mt-6 flex items-center justify-center gap-3 text-slate-700 relative z-10"
+                whileHover={{ scale: 1.1 }}
+              >
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-green-600" />
+                </div>
+                <span className="text-xl font-semibold">+91 9369088265</span>
+              </motion.div>
+              
+              <p className="mt-4 text-sm text-muted-foreground relative z-10">Click to call directly</p>
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Services We Offer */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Who We Serve</span>
+            <h2 className="text-3xl md:text-4xl font-bold font-display">All India Services</h2>
+            <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
+              We provide digital marketing services to businesses across all of India
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {teamMembers.map((member, i) => (
-              <motion.a
+            {services.map((service, i) => (
+              <motion.div
                 key={i}
-                href={`tel:${member.phone.replace(/\s/g, '')}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 text-center group"
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 border border-slate-100 hover:border-primary/30 hover:shadow-xl transition-all duration-300 text-center"
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <User className="w-10 h-10 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4 text-white">
+                  <service.icon className="w-8 h-8" />
                 </div>
-                <h3 className="font-bold text-lg text-slate-900">{member.name}</h3>
-                <p className="text-primary font-semibold text-sm mb-3">{member.role}</p>
-                <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                  <Phone className="w-4 h-4" />
-                  <span className="text-sm">{member.phone}</span>
-                </div>
-              </motion.a>
+                <h3 className="font-bold text-lg text-slate-900">{service.label}</h3>
+                <p className="text-sm text-muted-foreground mt-2">{service.desc}</p>
+              </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Happy Client */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <div className="text-center mb-10">
+              <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Happy Client</span>
+              <h2 className="text-3xl md:text-4xl font-bold font-display">Success Story</h2>
+            </div>
+            
+            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xl">
+              <Quote className="w-10 h-10 text-primary/20 mb-4" />
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                "RKB Digital Services completely transformed our school's digital presence. The team's dedication resulted in a significant increase in admissions and our brand is now well-recognized across Lalitpur."
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-xl">
+                  RA
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900">Royal Academy School</h4>
+                  <p className="text-primary text-sm font-medium">Lalitpur, Uttar Pradesh</p>
+                  <div className="flex gap-0.5 mt-1">
+                    {[1,2,3,4,5].map((i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -162,7 +261,7 @@ export default function About() {
             <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Our Values</span>
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">What Sets Us Apart</h2>
             <p className="text-muted-foreground text-lg">
-              We're committed to delivering exceptional results for every school we work with.
+              We're committed to delivering exceptional results for every client we work with.
             </p>
           </motion.div>
 
@@ -197,7 +296,7 @@ export default function About() {
           >
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">Ready to Partner with Us?</h2>
             <p className="text-white/80 text-lg max-w-2xl mx-auto mb-8">
-              Let's discuss how we can help your school grow its admissions through effective digital marketing.
+              Let's discuss how we can help your business grow through effective digital marketing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">

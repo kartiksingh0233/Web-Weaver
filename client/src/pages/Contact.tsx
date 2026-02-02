@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, MessageCircle, User } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Building2, GraduationCap, Hospital, Briefcase } from "lucide-react";
 import { InquiryForm } from "@/components/InquiryForm";
 
-const teamMembers = [
-  { name: "Mr. Rohit", role: "CEO", phone: "+91 8081874894" },
-  { name: "Mr. Kaushlendra", role: "MD", phone: "+91 9369088265" },
-  { name: "Mr. Brajendra", role: "Director", phone: "+91 9696824627" },
-  { name: "Mr. Chandra Bhushan", role: "Chairperson", phone: "+91 6387122561" },
+const services = [
+  { icon: GraduationCap, label: "Schools & Colleges" },
+  { icon: Hospital, label: "Hospitals & Clinics" },
+  { icon: Building2, label: "Companies & Startups" },
+  { icon: Briefcase, label: "Corporates & Societies" },
 ];
 
 export default function Contact() {
@@ -23,7 +23,7 @@ export default function Contact() {
           >
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">Contact Us</h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Get in touch with us for a free consultation. We'd love to hear about your school.
+              Get in touch for a free consultation. We serve businesses across All India.
             </p>
           </motion.div>
         </div>
@@ -31,34 +31,56 @@ export default function Contact() {
 
       <div className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
-          {/* Team Contact Cards */}
+          {/* MD Contact Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
+            className="mb-12 max-w-lg mx-auto"
+          >
+            <h2 className="text-2xl font-bold font-display text-center mb-6">Contact Our Managing Director</h2>
+            <motion.a
+              href="tel:+919369088265"
+              whileHover={{ scale: 1.03, y: -5 }}
+              whileTap={{ scale: 0.98 }}
+              className="block bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary/20 hover:to-accent/20 border-2 border-primary/40 rounded-2xl p-6 text-center transition-all duration-500 shadow-lg"
+            >
+              <motion.div
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+              >
+                <span className="text-4xl font-bold text-white">MK</span>
+              </motion.div>
+              <p className="font-bold text-slate-900 text-xl">Mr. Kaushlendra</p>
+              <p className="text-primary font-semibold text-lg">Managing Director</p>
+              <p className="text-slate-600 text-lg mt-3 flex items-center justify-center gap-2">
+                <Phone className="w-5 h-5 text-green-500" />
+                +91 9369088265
+              </p>
+            </motion.a>
+          </motion.div>
+
+          {/* Services We Offer */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
             className="mb-12"
           >
-            <h2 className="text-2xl font-bold font-display text-center mb-8">Our Leadership Team</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {teamMembers.map((member, i) => (
-                <motion.a
+            <h2 className="text-xl font-bold font-display text-center mb-6">We Serve All India</h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {services.map((service, i) => (
+                <motion.div
                   key={i}
-                  href={`tel:${member.phone.replace(/\s/g, '')}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.1 }}
-                  className="bg-white rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 + i * 0.1 }}
+                  className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <User className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="font-bold text-lg text-slate-900">{member.name}</h3>
-                  <p className="text-primary font-medium text-sm mb-3">{member.role}</p>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Phone className="w-4 h-4" />
-                    <span className="text-sm">{member.phone}</span>
-                  </div>
-                </motion.a>
+                  <service.icon className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium">{service.label}</span>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -92,7 +114,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-semibold text-slate-900">Email</p>
-                      <p className="text-muted-foreground">contact@rkbdigital.com</p>
+                      <a href="mailto:rkbdigitalservices@gmail.com" className="text-primary hover:underline">rkbdigitalservices@gmail.com</a>
                     </div>
                   </div>
 
@@ -103,7 +125,7 @@ export default function Contact() {
                     <div>
                       <p className="font-semibold text-slate-900">Location</p>
                       <p className="text-muted-foreground">Lalitpur, Uttar Pradesh, India</p>
-                      <p className="text-sm text-muted-foreground mt-1">Service Area: All Private Schools in Lalitpur</p>
+                      <p className="text-sm text-muted-foreground mt-1">Service Area: All India</p>
                     </div>
                   </div>
                 </div>
@@ -129,10 +151,10 @@ export default function Contact() {
                 <div className="absolute top-0 right-0 w-40 h-40 bg-primary/20 rounded-full blur-[60px]"></div>
                 <h3 className="text-xl font-bold font-display mb-4 relative z-10">Service Area</h3>
                 <p className="text-slate-300 relative z-10 mb-4">
-                  We primarily serve private schools in:
+                  We serve businesses across All India:
                 </p>
                 <div className="flex flex-wrap gap-2 relative z-10">
-                  {["Lalitpur City", "Surrounding Towns", "All Private Schools"].map((area, i) => (
+                  {["All India", "Schools", "Hospitals", "Companies", "Corporates", "Startups"].map((area, i) => (
                     <span key={i} className="px-4 py-2 bg-white/10 rounded-full text-sm font-medium backdrop-blur-sm border border-white/10">
                       {area}
                     </span>
@@ -149,7 +171,7 @@ export default function Contact() {
               className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100"
             >
               <h3 className="text-2xl font-bold font-display mb-2 text-slate-900">Send an Inquiry</h3>
-              <p className="text-muted-foreground mb-8">Fill out the form below and our team will get back to you within 24 hours.</p>
+              <p className="text-muted-foreground mb-8">Fill out the form and our team will contact you within 24 hours.</p>
               <InquiryForm />
             </motion.div>
           </div>

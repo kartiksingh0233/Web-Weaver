@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { AIChatbot } from "@/components/AIChatbot";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
@@ -37,6 +38,7 @@ function App() {
             <Router />
           </main>
           <Footer />
+          <AIChatbot />
         </div>
         <Toaster />
       </TooltipProvider>

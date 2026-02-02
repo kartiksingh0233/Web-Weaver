@@ -1,13 +1,13 @@
 import { Link } from "wouter";
-import { ArrowRight, CheckCircle2, PhoneCall, Rocket, Target, Users, Star, Sparkles, TrendingUp, Award } from "lucide-react";
+import { ArrowRight, CheckCircle2, PhoneCall, Rocket, Target, Users, Star, Sparkles, TrendingUp, Award, Building2, GraduationCap, Hospital, Briefcase, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const features = [
   {
     icon: Target,
-    title: "Local Parent Targeting",
-    description: "Reach parents in Lalitpur actively looking for quality schools for their children."
+    title: "All India Reach",
+    description: "We serve schools, hospitals, companies, and corporates across all of India."
   },
   {
     icon: Rocket,
@@ -16,8 +16,8 @@ const features = [
   },
   {
     icon: Users,
-    title: "Admission Focused",
-    description: "Every campaign is designed to drive inquiries and boost enrollments."
+    title: "Result Focused",
+    description: "Every campaign is designed to drive real business results and growth."
   }
 ];
 
@@ -28,6 +28,13 @@ const benefits = [
   "Video Reels & Shorts",
   "SEO Optimization",
   "100% Transparent Pricing"
+];
+
+const services = [
+  { icon: GraduationCap, label: "Schools & Colleges" },
+  { icon: Hospital, label: "Hospitals & Clinics" },
+  { icon: Building2, label: "Companies & Startups" },
+  { icon: Briefcase, label: "Corporates & Societies" },
 ];
 
 export default function Home() {
@@ -47,7 +54,7 @@ export default function Home() {
               className="inline-flex items-center rounded-full border border-primary/30 bg-gradient-to-r from-primary/10 to-accent/10 px-4 py-2 text-sm font-medium text-primary shadow-sm"
             >
               <Sparkles className="w-4 h-4 mr-2" />
-              School Admission & Digital Promotion Experts
+              All India Digital Marketing Services
             </motion.div>
             
             <motion.h1 
@@ -56,7 +63,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-7xl font-display font-extrabold text-slate-900 tracking-tight leading-[1.1]"
             >
-              Grow Your <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">School Admissions</span> with Smart Digital Marketing
+              Grow Your <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Business</span> with Smart Digital Marketing
             </motion.h1>
             
             <motion.p 
@@ -65,7 +72,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg sm:text-xl text-muted-foreground max-w-3xl leading-relaxed"
             >
-              We help private schools in <strong className="text-foreground">Lalitpur</strong> increase visibility, enquiries and admissions through <strong className="text-foreground">Facebook, Instagram and WhatsApp marketing</strong>.
+              <strong className="text-foreground">RKB Digital Services</strong> helps schools, hospitals, companies, and corporates across <strong className="text-foreground">All India</strong> grow through <strong className="text-foreground">Facebook, Instagram and WhatsApp marketing</strong>.
             </motion.p>
             
             <motion.div 
@@ -88,17 +95,24 @@ export default function Home() {
               </a>
             </motion.div>
 
+            {/* Services We Offer */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-wrap justify-center gap-3 pt-4"
+              className="flex flex-wrap justify-center gap-3 pt-6"
             >
-              {benefits.slice(0, 4).map((benefit, i) => (
-                <span key={i} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground bg-white/80 px-3 py-1.5 rounded-full border border-slate-100 shadow-sm">
-                  <CheckCircle2 className="w-4 h-4 text-green-500" />
-                  {benefit}
-                </span>
+              {services.map((service, i) => (
+                <motion.span 
+                  key={i} 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5 + i * 0.1 }}
+                  className="inline-flex items-center gap-2 text-sm bg-white/80 px-4 py-2 rounded-full border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <service.icon className="w-4 h-4 text-primary" />
+                  {service.label}
+                </motion.span>
               ))}
             </motion.div>
           </div>
@@ -111,8 +125,8 @@ export default function Home() {
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 py-8 px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               {[
-                { label: "Schools Partnered", value: "50+", icon: Award },
-                { label: "Admissions Generated", value: "2500+", icon: TrendingUp },
+                { label: "Clients Served", value: "100+", icon: Award },
+                { label: "Leads Generated", value: "5000+", icon: TrendingUp },
                 { label: "Campaign ROI", value: "300%", icon: Star },
                 { label: "Years Experience", value: "5+", icon: Sparkles },
               ].map((stat, i) => (
@@ -136,8 +150,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Happy Client - Royal Academy */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-10">
+              <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Our Happy Client</span>
+              <h2 className="text-3xl md:text-4xl font-bold font-display">Success Story</h2>
+            </div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-primary/5 via-white to-accent/5 rounded-3xl p-8 md:p-12 border border-primary/20 shadow-xl"
+            >
+              <div className="flex items-start gap-4 mb-6">
+                <Quote className="w-12 h-12 text-primary/30 shrink-0" />
+              </div>
+              <blockquote className="text-xl md:text-2xl text-slate-700 leading-relaxed mb-8">
+                "RKB Digital Services transformed our school's digital presence. We saw a <span className="text-primary font-bold">significant increase in admissions</span> and our brand visibility improved tremendously across Lalitpur."
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                  RA
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg text-slate-900">Royal Academy School</h4>
+                  <p className="text-primary font-medium">Lalitpur, Uttar Pradesh</p>
+                  <div className="flex gap-1 mt-1">
+                    {[1,2,3,4,5].map((i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8 pt-6 border-t border-slate-200">
+                <h5 className="font-semibold text-slate-900 mb-3">Results Achieved:</h5>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {[
+                    "Increased Admissions",
+                    "Better Brand Recognition",
+                    "High-Quality Content",
+                    "Social Media Growth",
+                    "Parent Engagement",
+                    "Digital Excellence"
+                  ].map((result, i) => (
+                    <div key={i} className="flex items-center gap-2 text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-green-500" />
+                      <span>{result}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Core Features */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <motion.span 
@@ -154,7 +231,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl font-bold font-display mb-4"
             >
-              Why Schools Trust RKB Digital
+              Why Businesses Trust RKB Digital Services
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -162,7 +239,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-muted-foreground text-lg"
             >
-              We understand the unique challenges of educational marketing and provide tailored solutions for schools in Lalitpur.
+              We understand the unique challenges of digital marketing and provide tailored solutions for businesses across All India.
             </motion.p>
           </div>
           
@@ -174,7 +251,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group bg-gradient-to-br from-slate-50 to-white p-8 rounded-2xl border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                className="group bg-white p-8 rounded-2xl border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
               >
                 <div className="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-7 h-7" />
@@ -188,7 +265,7 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -197,9 +274,9 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Our Services</span>
-              <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">Complete Digital Solutions for Schools</h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">Complete Digital Solutions for Your Business</h2>
               <p className="text-muted-foreground text-lg mb-8">
-                From social media management to website development, we offer everything your school needs to succeed in the digital age.
+                From social media management to website development, we offer everything your business needs to succeed in the digital age.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {benefits.map((benefit, i) => (
@@ -239,7 +316,7 @@ export default function Home() {
                   {[
                     "16-20 Social Media Posts",
                     "4 Short Reels per Month",
-                    "Admission Open Posters",
+                    "Promotional Posters",
                     "Festival & Event Creatives",
                     "Facebook & Instagram Handling",
                     "WhatsApp Promotion Posters"
@@ -270,9 +347,9 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">Ready to Boost Your Admissions?</h2>
+            <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">Ready to Grow Your Business?</h2>
             <p className="text-white/80 text-lg max-w-2xl mx-auto mb-10">
-              Join the leading schools in Lalitpur that are transforming their digital presence with our expert strategies.
+              Join businesses across All India that are transforming their digital presence with our expert strategies.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
