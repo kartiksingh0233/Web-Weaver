@@ -22,7 +22,7 @@ export function Navigation() {
 
   const handleLogoClick = () => {
     setLogoClicked(true);
-    setTimeout(() => setLogoClicked(false), 1000);
+    setTimeout(() => setLogoClicked(false), 2000);
   };
 
   return (
@@ -32,19 +32,43 @@ export function Navigation() {
           <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity" onClick={handleLogoClick}>
             <motion.div
               animate={logoClicked ? { 
-                rotateY: [0, 360],
-                scale: [1, 1.2, 1],
-              } : {}}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="perspective-1000"
-              style={{ transformStyle: "preserve-3d" }}
+                rotateY: [0, 180, 360],
+                rotateX: [0, 15, 0, -15, 0],
+                scale: [1, 1.3, 1.1, 1.3, 1],
+              } : {
+                rotateY: [0, 10, -10, 0],
+                scale: [1, 1.02, 1],
+              }}
+              transition={logoClicked ? { 
+                duration: 1.5, 
+                ease: "easeInOut",
+                times: [0, 0.25, 0.5, 0.75, 1]
+              } : {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="relative"
+              style={{ transformStyle: "preserve-3d", perspective: 1000 }}
             >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-primary/50 to-accent/50 rounded-full blur-xl"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
               <motion.img 
                 src={logoImage} 
                 alt="RKB Digital Services" 
-                className="h-14 w-14 object-contain drop-shadow-lg"
-                whileHover={{ scale: 1.1, rotateZ: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                className="h-14 w-14 object-contain drop-shadow-2xl relative z-10"
+                whileHover={{ 
+                  scale: 1.15, 
+                  rotateZ: [0, -5, 5, 0],
+                  filter: "drop-shadow(0 0 20px rgba(59, 130, 246, 0.5))"
+                }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
               />
             </motion.div>
             <div className="hidden sm:block">

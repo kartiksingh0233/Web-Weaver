@@ -31,34 +31,51 @@ export default function Contact() {
 
       <div className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
-          {/* MD Contact Card */}
+          {/* Leadership Team */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="mb-12 max-w-lg mx-auto"
+            className="mb-12"
           >
-            <h2 className="text-2xl font-bold font-display text-center mb-6">Contact Our Managing Director</h2>
-            <motion.a
-              href="tel:+919369088265"
-              whileHover={{ scale: 1.03, y: -5 }}
-              whileTap={{ scale: 0.98 }}
-              className="block bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary/20 hover:to-accent/20 border-2 border-primary/40 rounded-2xl p-6 text-center transition-all duration-500 shadow-lg"
-            >
-              <motion.div
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-                className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
-              >
-                <span className="text-4xl font-bold text-white">MK</span>
-              </motion.div>
-              <p className="font-bold text-slate-900 text-xl">Mr. Kaushlendra</p>
-              <p className="text-primary font-semibold text-lg">Managing Director</p>
-              <p className="text-slate-600 text-lg mt-3 flex items-center justify-center gap-2">
-                <Phone className="w-5 h-5 text-green-500" />
-                +91 9369088265
-              </p>
-            </motion.a>
+            <h2 className="text-2xl font-bold font-display text-center mb-6">Our Leadership Team</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+              {[
+                { name: "Mr. Chandra Bhushan", role: "Chairperson", initials: "CB", color: "from-amber-500 to-orange-500" },
+                { name: "Mr. Rohit", role: "CEO", initials: "RO", color: "from-blue-500 to-cyan-500" },
+                { name: "Mr. Kaushlendra", role: "MD", initials: "MK", phone: "+91 9369088265", color: "from-primary to-accent" },
+                { name: "Mr. Brajendra", role: "Director", initials: "BR", color: "from-purple-500 to-pink-500" },
+              ].map((leader, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  onClick={() => leader.phone && window.open(`tel:${leader.phone.replace(/\s/g, '')}`)}
+                  className={`bg-white rounded-xl p-4 border-2 ${leader.phone ? 'border-primary/40 shadow-lg shadow-primary/10 cursor-pointer' : 'border-slate-100 shadow-md'} text-center`}
+                >
+                  <motion.div
+                    animate={leader.phone ? { 
+                      scale: [1, 1.05, 1],
+                      boxShadow: ["0 0 0 0 rgba(59, 130, 246, 0)", "0 0 15px 3px rgba(59, 130, 246, 0.2)", "0 0 0 0 rgba(59, 130, 246, 0)"]
+                    } : {}}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                    className={`w-14 h-14 bg-gradient-to-br ${leader.color} rounded-full flex items-center justify-center mx-auto mb-3 shadow-md`}
+                  >
+                    <span className="text-xl font-bold text-white">{leader.initials}</span>
+                  </motion.div>
+                  <p className="font-bold text-slate-900 text-sm">{leader.name}</p>
+                  <p className={`text-xs font-semibold ${leader.phone ? 'text-primary' : 'text-slate-500'}`}>{leader.role}</p>
+                  {leader.phone && (
+                    <p className="text-xs text-green-600 mt-2 flex items-center justify-center gap-1">
+                      <Phone className="w-3 h-3" />
+                      {leader.phone}
+                    </p>
+                  )}
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Services We Offer */}

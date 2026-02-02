@@ -76,13 +76,31 @@ export default function About() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-3xl"></div>
                 <div className="relative bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 border border-slate-100 shadow-xl">
-                  <motion.img 
-                    src={logoImage} 
-                    alt="RKB Digital Services" 
-                    className="w-48 h-48 mx-auto object-contain mb-6"
-                    whileHover={{ rotateY: 180, scale: 1.1 }}
-                    transition={{ duration: 0.8 }}
-                  />
+                  <motion.div className="relative mx-auto w-48 h-48 mb-6">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full blur-2xl"
+                      animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.4, 0.7, 0.4],
+                      }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                    />
+                    <motion.img 
+                      src={logoImage} 
+                      alt="RKB Digital Services" 
+                      className="w-48 h-48 object-contain relative z-10"
+                      animate={{
+                        rotateY: [0, 15, -15, 0],
+                        scale: [1, 1.03, 1],
+                      }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      whileHover={{ 
+                        rotateY: 360, 
+                        scale: 1.15,
+                        filter: "drop-shadow(0 0 25px rgba(59, 130, 246, 0.5))"
+                      }}
+                    />
+                  </motion.div>
                   <div className="text-center">
                     <h2 className="text-2xl font-bold font-display bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">RKB Digital Services</h2>
                     <p className="text-muted-foreground font-medium">All India Digital Marketing Experts</p>
@@ -117,7 +135,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* MD Section */}
+      {/* Leadership Section */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -127,49 +145,60 @@ export default function About() {
             className="text-center mb-12"
           >
             <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Our Leadership</span>
-            <h2 className="text-3xl md:text-4xl font-bold font-display">Meet Our Managing Director</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-display">Meet Our Team</h2>
+            <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
+              Our experienced leadership team is dedicated to your business success
+            </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="max-w-lg mx-auto"
-          >
-            <motion.a
-              href="tel:+919369088265"
-              whileHover={{ scale: 1.05, y: -10 }}
-              whileTap={{ scale: 0.98 }}
-              className="block bg-white rounded-3xl p-8 border-2 border-primary/30 shadow-2xl shadow-primary/10 text-center group relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              { name: "Mr. Chandra Bhushan", role: "Chairperson", initials: "CB", color: "from-amber-500 to-orange-500" },
+              { name: "Mr. Rohit", role: "CEO", initials: "RO", color: "from-blue-500 to-cyan-500" },
+              { name: "Mr. Kaushlendra", role: "MD", initials: "MK", phone: "+91 9369088265", color: "from-primary to-accent" },
+              { name: "Mr. Brajendra", role: "Director", initials: "BR", color: "from-purple-500 to-pink-500" },
+            ].map((leader, i) => (
               <motion.div
-                animate={{ 
-                  boxShadow: ["0 0 0 0 rgba(59, 130, 246, 0)", "0 0 0 20px rgba(59, 130, 246, 0.1)", "0 0 0 0 rgba(59, 130, 246, 0)"]
-                }}
-                transition={{ repeat: Infinity, duration: 2 }}
-                className="relative w-32 h-32 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6"
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                whileHover={{ scale: 1.05, y: -10 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => leader.phone && window.open(`tel:${leader.phone.replace(/\s/g, '')}`)}
+                className={`bg-white rounded-2xl p-6 border-2 ${leader.phone ? 'border-primary/40 shadow-xl shadow-primary/10 cursor-pointer' : 'border-slate-100 shadow-lg'} text-center relative overflow-hidden group`}
               >
-                <span className="text-5xl font-bold text-white">MK</span>
+                <div className={`absolute inset-0 bg-gradient-to-br ${leader.phone ? 'from-primary/5 to-accent/5' : 'from-slate-50 to-white'} opacity-0 group-hover:opacity-100 transition-opacity`}></div>
+                
+                <motion.div
+                  animate={leader.phone ? { 
+                    boxShadow: ["0 0 0 0 rgba(59, 130, 246, 0)", "0 0 0 15px rgba(59, 130, 246, 0.15)", "0 0 0 0 rgba(59, 130, 246, 0)"],
+                    scale: [1, 1.05, 1]
+                  } : {}}
+                  transition={{ repeat: Infinity, duration: 2.5 }}
+                  className={`relative w-24 h-24 bg-gradient-to-br ${leader.color} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg`}
+                >
+                  <span className="text-3xl font-bold text-white">{leader.initials}</span>
+                </motion.div>
+                
+                <h3 className="font-bold text-lg text-slate-900 relative z-10">{leader.name}</h3>
+                <p className={`font-semibold text-sm mt-1 relative z-10 ${leader.phone ? 'text-primary' : 'text-slate-500'}`}>{leader.role}</p>
+                
+                {leader.phone && (
+                  <motion.div 
+                    className="mt-4 flex items-center justify-center gap-2 text-slate-700 relative z-10"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                      <Phone className="w-4 h-4 text-green-600" />
+                    </div>
+                    <span className="text-sm font-semibold">{leader.phone}</span>
+                  </motion.div>
+                )}
               </motion.div>
-              
-              <h3 className="font-bold text-2xl text-slate-900 relative z-10">Mr. Kaushlendra</h3>
-              <p className="text-primary font-bold text-xl mt-2 relative z-10">Managing Director</p>
-              
-              <motion.div 
-                className="mt-6 flex items-center justify-center gap-3 text-slate-700 relative z-10"
-                whileHover={{ scale: 1.1 }}
-              >
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-green-600" />
-                </div>
-                <span className="text-xl font-semibold">+91 9369088265</span>
-              </motion.div>
-              
-              <p className="mt-4 text-sm text-muted-foreground relative z-10">Click to call directly</p>
-            </motion.a>
-          </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
